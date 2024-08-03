@@ -1,0 +1,77 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 340px;
+  }
+
+  .register-heading{
+    align-self: flex-start; 
+    width: 9%; 
+    max-width: 200px; 
+    margin-bottom: 20px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    border-bottom: 2px solid green; 
+    padding-bottom: 10px; 
+    color: #333; 
+  }
+  
+  
+  input {
+    width: 90%; 
+    padding: 10px;
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+  }
+  
+  input:focus {
+    border-color: #007bff; 
+    outline: none; 
+  }
+  
+  
+  button {
+    background-color: green; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  button:hover {
+    background-color: #fff;
+    border:2px solid green;
+    color:green; 
+  }
+  
+  a {
+    color: #007bff; 
+    text-decoration: none; 
+    margin-top: 10px; 
+  }
+  
+  a:hover {
+    text-decoration: underline; 
+  }
+  

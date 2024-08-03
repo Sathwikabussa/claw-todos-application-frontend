@@ -1,0 +1,82 @@
+.container{
+    max-width: 600px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+h1{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.top{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.input-text{
+    width: 400px;
+    padding: 0.5rem;
+    outline:none;
+    height: 30px;
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #e4e7eb;
+    border-radius: 10px;
+}
+
+.input-text:hover{
+    border: 2px solid #4c63b6;
+}
+
+.add{
+    color: white;
+    background-color: #4c63b6;
+    font-size: 18px;
+    border-width: 0px;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 47px;
+    width: 90px;
+    cursor: pointer;
+}
+
+.add:hover{
+    border:2px solid #4c63b6;
+    background-color: #fff;
+    color: #4c63b6;
+}
+
+.main-heading{
+    text-align: center;
+    font-weight: 600;
+}
+.sub-heading{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.logout-btn{
+    position: absolute;
+    top: 20px; 
+    right: 40px; 
+    background-color: green; 
+    color: white; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+.logout-btn:hover{
+    color: green;
+    background-color: #fff;
+    border:2px solid green;
+}
