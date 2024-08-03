@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+To-Do List Application API Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Overview
 
-## Available Scripts
+This API allows users to register, log in, and manage their to-do items. It uses Node.js, Supabase, and MongoDB for the backend, with the backend deployed on Render and the frontend on Netlify.
 
-In the project directory, you can run:
+### User Authentication:
 
-### `npm start`
+  * Implement user registration and login using Supabase.
+  * Store user information securely in MongoDB.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### To-Do Operations:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  * Allow users to create, read, update, and delete their to-do items.
+  * Ensure each user can only access their own to-do items.
 
-### `npm test`
+### API Endpoints
+### 1. Register User
+Endpoint: POST /register
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Description: Register a new user.
+Request:
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+Response:
+Registered Succesfully
 
-### `npm run build`
+### 2. Login User
+Endpoint: POST /login
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Description: Log in an existing user.
+Request:
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+Response:
+Login Succesfully
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Create Todo
+Endpoint: POST /save
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Description: Create a new to-do item.
 
-### `npm run eject`
+Request:
+{
+    "text":"Learn python"
+}
+Response:
+{
+    "text": "Learn python",
+    "_id": "66ae1ea479c68e0103bd3994",
+    "__v": 0
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. Get Todos
+Endpoint: GET /
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Description: Retrieve all to-do items for the logged-in user.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Request:
+Authorization
+Response:
+[
+    {
+        "_id": "66add34ea4c96ee120d67116",
+        "text": "Learn nodejs",
+        "__v": 0
+    },
+    {
+        "_id": "66add6b5affd897fa17d3354",
+        "text": "Learn Git",
+        "__v": 0
+    },
+    {
+        "_id": "66adf3d911e71538bdc2d737",
+        "text": "erhgbvn ",
+        "__v": 0
+    },
+    {
+{
+    "text": "Learn python",
+    "_id": "66ae1ea479c68e0103bd3994",
+    "__v": 0
+}
+]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 5. Update Todo
+Endpoint: PUT /update
 
-## Learn More
+Description: Update a to-do item by ID.
+Request:
+{
+    "_id": "66ae1ea479c68e0103bd3994",
+    "text":"Learn Java"
+}
+Response:
+Updated Successfully
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 6. Delete Todo
+Endpoint: DELETE /api/todos/:id
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Description: Delete a to-do item by ID.
+Request:
+{
+    "_id": "66ae1ea479c68e0103bd3994"
+}
+Response:
+Deleted Successfully
 
 ### Deployment
+Create a Netlify Account:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Sign up at Netlify.
+Create a New Site:
 
-### `npm run build` fails to minify
+Click on New site from Git.
+Connect your GitHub repository containing the frontend code.
+Configure the Site:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Select the branch to deploy.
+Set the build command and publish directory:
+Build Command: npm run build
+Publish Directory: build
+Environment Variables:
+
+Add  environment variables such as REACT_APP_SUPABASE_URL,REACT_APP_SUPABASE_KEY.
+Deploy:
+
+Click Deploy site to deploy.
+
+netlify link:
+https://glittering-sunburst-368c1c.netlify.app
+
+
+
